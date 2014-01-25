@@ -108,6 +108,7 @@ javac -version
 If the first command fails, you need to install or configure the Java runtime edition (link)
 If the second command fails, you need to install or configur the Java SDK (link)
 
+
 ****** DONE Tweaking REPL prompt
        CLOSED: [2013-08-30 Fri 12:03]
        BLOG: [[http://blog.jr0cket.co.uk/2013/08/add-colour-to-your-clojure-repl-with.html][Add Colour to your Clojure REPL with Leiningen and  ASCII codes]]
@@ -123,6 +124,11 @@ If the second command fails, you need to install or configur the Java SDK (link)
 ******** project profiles
 - include plugins that are only used during development and not needed for run time
 - eg. testing frameworks
+****** Using Local Repositories (eg. Maven)
+
+Lein Install  
+- places jars into local repo and link check repo firs when doing dependency checking [TODO: needs reading up on]
+
 ****** Leiningen Plugins to consider
 ******** [[https://github.com/juggler/lein-heroku-deploy][lein-heroku-deploy]] - simplify your Heroku deploy
 - The heroku deploy plugin will 
@@ -146,6 +152,8 @@ If the second command fails, you need to install or configur the Java SDK (link)
 ****** Automatically set REPL settings to manage level of output 
        [2013-08-29 Thu]
        [[file:~/Dropbox/emacs-for-clojure-developers/manuscript/wip.md::<!--%20Do%20you%20have%20to%20set%20these%20each%20time%20you%20enter%20a%20repl?%20Is%20there%20a%20way%20to%20have%20these%20by%20default%20?%20-->][file:~/Dropbox/emacs-for-clojure-developers/manuscript/wip.md::<!-- Do you have to set these each time you enter a repl? Is there a way to have these by default ? -->]]
+
+
 **** Light Table 5.x
 ****** DONE Install latest 5.x version
        CLOSED: [2013-08-27 Tue 13:24]
@@ -678,12 +686,12 @@ When you evaluate functions in the REPL that work on Vectors you may get a list 
 
 This is because the result of the function is a sequence and the REPL displays all sequences as lists.  The actual result is still a vector and this can be checked using (class ...) around your function to check the type returned.
 
-
-*** Lists 
+*** Collections
+**** Lists 
 (quote (:a :b :c))
 (list ...)
 
-*** Vector 
+**** Vector 
 []
 
 Performance differences from lists - acts like an array, although its not an array
@@ -691,7 +699,7 @@ Performance differences from lists - acts like an array, although its not an arr
 Lists are a linked list 
 Vectors occupy a fixed set of memory 
 
-*** Maps
+**** Maps
 have a literal syntax and are easy to define 
 
 small maps are array-map
@@ -700,16 +708,16 @@ hash-map
 
 sorted-map 
 
-*** Sets
+**** Sets
 Although sets are backed by the same kind of algorytim as maps, they have a slightly different behaviours
 
 #
 
-*** quiz
+**** quiz
 
 {:inventory #{"axe" "key"} , :room {:name "Billard room"} , :exits [:North : South]}
 
-*** Exercises
+**** Exercises
 create a data representation of a hand of cards 
 
 *** Prefix notation 
